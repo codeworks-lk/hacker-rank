@@ -1,6 +1,31 @@
 'use strict';
 
+import { sockMerchant } from './warm-up/sock-merchant.js';
+import { repeatedString } from './warm-up/repeated-string.js';
+import { countingValleys } from './warm-up/counting-valleys.js';
+import { jumpingOnClouds } from './warm-up/jumping-on-clouds.js';
+import { hourglassSum } from './arrays/hourglass-sum.js';
+
 console.log("hello hacker-rank");
+
+let result = 0;
+
+result = hourglassSum([
+    [-9, -9, -9,  1,  1,  1],
+    [ 0, -9,  0,  4,  3,  2],
+    [-9, -9, -9,  1,  2,  3],
+    [ 0,  0,  8,  6,  6,  0],
+    [ 0,  0,  0, -2,  0,  0],
+    [ 0,  0,  1,  2,  4,  0],
+]);
+
+// result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
+// result = countingValleys(3, 'DUUDDDDU');
+// result = repeatedString('a', 10000000000);
+// result = jumpingOnClouds([0, 1, 0, 1, 0]);
+
+console.log(result);
+
 
 // const testCase = `
 // 3
@@ -19,18 +44,3 @@ console.log("hello hacker-rank");
 
 // const n = parseInt(readLine(), 10);
 // const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
-
-// import { sockMerchant } from './sock-merchant.js';
-// const result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
-
-// import { countingValleys } from './counting-valleys.js';
-// const result = countingValleys(3, 'DUUDDDDU');
-
-// import { repeatedString } from './repeated-string.js';
-// const result = repeatedString('a', 10000000000);
-
-import { jumpingOnClouds } from './jumping-on-clouds.js';
-const result = jumpingOnClouds([0, 1, 0, 1, 0]);
-
-
-console.log(result);
