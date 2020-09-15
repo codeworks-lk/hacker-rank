@@ -36,10 +36,3 @@ function at(arr, x, y) {
 function measure(arr) {
     return { n : arr[0].length, m : arr.length };
 }
-
-
-
-function sumThree(x, arr) {
-    return part(arr, x, x + 2)
-        .reduce((acc, v) => acc + v, 0);
-}
