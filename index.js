@@ -20,10 +20,13 @@ console.log("hello hacker-rank");
 // const n = parseInt(readLine(), 10);
 // const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
 
-import { sockMerchant } from './sock-merchant.js';
-import { countingValleys } from './counting-valleys.js';
-
+// import { sockMerchant } from './sock-merchant.js';
 // const result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
-const result = countingValleys(3, 'DUUDDDDU');
+
+// import { countingValleys } from './counting-valleys.js';
+// const result = countingValleys(3, 'DUUDDDDU');
+
+import { repeatedString } from './repeated-string.js';
+const result = repeatedString('a', 10000000000);
 
 console.log(result);
