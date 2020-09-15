@@ -26,7 +26,11 @@ console.log("hello hacker-rank");
 // import { countingValleys } from './counting-valleys.js';
 // const result = countingValleys(3, 'DUUDDDDU');
 
-import { repeatedString } from './repeated-string.js';
-const result = repeatedString('a', 10000000000);
+// import { repeatedString } from './repeated-string.js';
+// const result = repeatedString('a', 10000000000);
+
+import { jumpingOnClouds } from './jumping-on-clouds.js';
+const result = jumpingOnClouds([0, 1, 0, 1, 0]);
+
 
 console.log(result);
