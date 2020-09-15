@@ -21,7 +21,9 @@ console.log("hello hacker-rank");
 // const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
 
 import { sockMerchant } from './sock-merchant.js';
+import { countingValleys } from './counting-valleys.js';
 
-const result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
+// const result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
+const result = countingValleys(13, 'UDDDUDUUUDDUU');
 
 console.log(result);
