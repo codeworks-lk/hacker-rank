@@ -1,0 +1,21 @@
+{
+  "name": "hacker-rank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeworks-lk/hacker-rank.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codeworks-lk/hacker-rank/issues"
+  },
+  "homepage": "https://github.com/codeworks-lk/hacker-rank#readme"
+}
