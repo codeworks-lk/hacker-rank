@@ -24,6 +24,6 @@ import { sockMerchant } from './sock-merchant.js';
 import { countingValleys } from './counting-valleys.js';
 
 // const result = sockMerchant(6, [1, 2, 3, 1, 1, 2]);
-const result = countingValleys(13, 'UDDDUDUUUDDUU');
+const result = countingValleys(3, 'DUUDDDDU');
 
 console.log(result);
