@@ -9,14 +9,17 @@ import { rotLeft, rotRight } from './arrays/left-rotation.js';
 import { minimumBribes } from './arrays/new-year-chaos.js';
 import { minimumSwaps } from './arrays/minimum-swaps-2.js';
 import { arrayManipulation } from './arrays/array-manipulation.js';
+import { checkMagazine } from './hashmaps/ransom-note.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = arrayManipulation(7, [ [ 1, 4, 10 ], 
-                                [ 2, 5, 8  ],
-                                [ 3, 3, 2  ] ])
+result = checkMagazine(['hello', 'you', 'fool'], ['fool']);
+
+// result = arrayManipulation(7, [ [ 1, 4, 10 ], 
+//                                 [ 2, 5, 8  ],
+//                                 [ 3, 3, 2  ] ])
 
 
 // result = minimumSwaps([2, 3, 4, 1]);
