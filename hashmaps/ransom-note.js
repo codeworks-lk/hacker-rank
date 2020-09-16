@@ -16,9 +16,10 @@ export function checkMagazine(magazine, note) {
             index.set(word, count - 1);
         }
         else {
-            return 'No';
+            console.log('No');
+            return;
         }
     };
 
-    return 'Yes';
+    console.log('Yes');
 }
