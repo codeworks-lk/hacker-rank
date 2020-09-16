@@ -11,12 +11,15 @@ import { minimumSwaps } from './arrays/minimum-swaps-2.js';
 import { arrayManipulation } from './arrays/array-manipulation.js';
 import { checkMagazine } from './hashmaps/ransom-note.js';
 import { twoStrings } from './hashmaps/two-strings.js';
+import { sherlockAndAnagrams } from './hashmaps/sherlock-and-anagrams.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = twoStrings('hey', 'no');
+result = sherlockAndAnagrams('heollo');
+
+// result = twoStrings('hey', 'no');
 
 // result = checkMagazine(['hello', 'you', 'fool'], ['fool']);
 
