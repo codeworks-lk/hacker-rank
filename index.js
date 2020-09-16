@@ -6,14 +6,22 @@ import { countingValleys } from './warm-up/counting-valleys.js';
 import { jumpingOnClouds } from './warm-up/jumping-on-clouds.js';
 import { hourglassSum } from './arrays/hourglass-sum.js';
 import { rotLeft, rotRight } from './arrays/left-rotation.js';
+import { minimumBribes } from './arrays/new-year-chaos.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = rotLeft([1, 2, 3], 4);
-result = rotRight([1, 2, 3], 4);
+// result = minimumBribes([3, 2, 1]);
+// 123 - 132 - 312 - 321
+// result = minimumBribes([1, 2, 3, 4, 5, 6]);
+result = minimumBribes([2, 4, 3, 1, 5, 6]);
+// 123456 - 213456 - 214356 - 241356 - 243156 
+// result = minimumBribes([3, 4, 5, 2, 6, 1]);
 
+
+// result = rotLeft([1, 2, 3], 4);
+// result = rotRight([1, 2, 3], 4);
 // result = hourglassSum([
 //     [-9, -9, -9,  1,  1,  1],
 //     [ 0, -9,  0,  4,  3,  2],
