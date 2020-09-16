@@ -7,15 +7,18 @@ import { jumpingOnClouds } from './warm-up/jumping-on-clouds.js';
 import { hourglassSum } from './arrays/hourglass-sum.js';
 import { rotLeft, rotRight } from './arrays/left-rotation.js';
 import { minimumBribes } from './arrays/new-year-chaos.js';
+import { minimumSwaps } from './arrays/minimum-swaps-2.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
+result = minimumSwaps([2, 3, 4, 1]);
+
 // result = minimumBribes([3, 2, 1]);
 // 123 - 132 - 312 - 321
 // result = minimumBribes([1, 2, 3, 4, 5, 6]);
-result = minimumBribes([2, 4, 3, 1, 5, 6]);
+// result = minimumBribes([2, 4, 3, 1, 5, 6]);
 // 123456 - 213456 - 214356 - 241356 - 243156 
 // result = minimumBribes([3, 4, 5, 2, 6, 1]);
 
