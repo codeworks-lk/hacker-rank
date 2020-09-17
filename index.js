@@ -13,15 +13,29 @@ import { checkMagazine } from './hashmaps/ransom-note.js';
 import { twoStrings } from './hashmaps/two-strings.js';
 import { sherlockAndAnagrams } from './hashmaps/sherlock-and-anagrams.js';
 import { countTriplets } from './hashmaps/count-triplets.js';
+import { freqQuery } from './hashmaps/frequency-queries.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = countTriplets(Array(100).fill(1), 1);
+
+result = freqQuery([ 
+    [3, 1],
+    [2, 1],
+    [3, 1],
+    [1, 1],
+    [1, 2],
+    [3, 1],
+    [2, 1],
+    [3, 1]
+]);
+
+
+// result = countTriplets(Array(100).fill(1), 1);
 // 161700
 // result = countTriplets([1e3, 1e6, 1e9], 1e3);
-result = countTriplets([5, 1, 2, 1, 1, 2, 4, 4, 4, 10], 2);
+// result = countTriplets([5, 1, 2, 1, 1, 2, 4, 4, 4, 10], 2);
 
 // result = sherlockAndAnagrams('heollo');
 
