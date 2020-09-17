@@ -16,12 +16,15 @@ import { countTriplets } from './hashmaps/count-triplets.js';
 import { freqQuery } from './hashmaps/frequency-queries.js';
 import { countSwaps } from './sorting/bubble-sort.js';
 import { maximumToys } from './sorting/mark-and-toys.js';
+import { Checker } from './sorting/comparator.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = maximumToys([5, 2, 1, 1, 100], 99);
+// result = Checker.compare({ name: 'Aa', score: 1 }, { name: 'Ab', score: 1 });
+
+// result = maximumToys([5, 2, 1, 1, 100], 99);
 
 // result = countSwaps([6, 12, 4]);
 
