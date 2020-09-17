@@ -14,22 +14,25 @@ import { twoStrings } from './hashmaps/two-strings.js';
 import { sherlockAndAnagrams } from './hashmaps/sherlock-and-anagrams.js';
 import { countTriplets } from './hashmaps/count-triplets.js';
 import { freqQuery } from './hashmaps/frequency-queries.js';
+import { countSwaps } from './sorting/bubble-sort.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
+result = countSwaps([6, 12, 4]);
 
-result = freqQuery([ 
-    [3, 1],
-    [2, 1],
-    [3, 1],
-    [1, 1],
-    [1, 2],
-    [3, 1],
-    [2, 1],
-    [3, 1]
-]);
+
+// result = freqQuery([ 
+//     [3, 1],
+//     [2, 1],
+//     [3, 1],
+//     [1, 1],
+//     [1, 2],
+//     [3, 1],
+//     [2, 1],
+//     [3, 1]
+// ]);
 
 
 // result = countTriplets(Array(100).fill(1), 1);
