@@ -17,10 +17,16 @@ import { freqQuery } from './hashmaps/frequency-queries.js';
 import { countSwaps } from './sorting/bubble-sort.js';
 import { maximumToys } from './sorting/mark-and-toys.js';
 import { Checker } from './sorting/comparator.js';
+import { activityNotifications, readActivityNotificationsTestCase } from './sorting/fraudulent-activity-notifications.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
+
+
+
+// let { exp, d } = readActivityNotificationsTestCase('sorting/fraudulent-activity-notifications-test-case-2.txt');
+// result = activityNotifications(exp, d);
 
 // result = Checker.compare({ name: 'Aa', score: 1 }, { name: 'Ab', score: 1 });
 
@@ -83,21 +89,3 @@ let result = 0;
 
 console.log(result);
 
-
-// const testCase = `
-// 3
-// 1 2 3`;
-
-// let inputLines = []
-// let currentLine = 0;
-
-// inputLines = testCase
-//     .split('\n')
-//     .filter((v) => v !== '');
-
-// function readLine() {
-//     return inputLines[currentLine++];
-// }
-
-// const n = parseInt(readLine(), 10);
-// const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
