@@ -20,12 +20,15 @@ import { Checker } from './sorting/comparator.js';
 import { activityNotifications, readActivityNotificationsTestCase } from './sorting/fraudulent-activity-notifications.js';
 import { countInversions, countInversionsBrute, readCountingInversionsTestCase } from './sorting/counting-inversions.js';
 import { makeAnagram } from './strings/making-anagrams.js';
+import { alternatingCharacters } from './strings/alternating-characters.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = makeAnagram('a', 'ab');
+result = alternatingCharacters('aaabbaabbb');
+
+// result = makeAnagram('a', 'ab');
 
 
 // let tc = readCountingInversionsTestCase('sorting/counting-inversions-test-case-1.txt');
