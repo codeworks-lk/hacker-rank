@@ -18,12 +18,24 @@ import { countSwaps } from './sorting/bubble-sort.js';
 import { maximumToys } from './sorting/mark-and-toys.js';
 import { Checker } from './sorting/comparator.js';
 import { activityNotifications, readActivityNotificationsTestCase } from './sorting/fraudulent-activity-notifications.js';
+import { countInversions, countInversionsBrute, readCountingInversionsTestCase } from './sorting/counting-inversions.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
+let tc = readCountingInversionsTestCase('sorting/counting-inversions-test-case-1.txt');
 
+for (let arr of tc) {
+    result = countInversionsBrute(arr);
+    console.log(result);
+    result = countInversions(arr);
+    console.log(result);
+}
+
+// result = countInversionsBrute([1,5,1,8,2,3,5,9,8,3,5]);
+// result = countInversions([1,5,1,8,2,3,5,9,8,3,5]);
+// result = countInversions([2,1,3,1,2]);
 
 // let { exp, d } = readActivityNotificationsTestCase('sorting/fraudulent-activity-notifications-test-case-2.txt');
 // result = activityNotifications(exp, d);
