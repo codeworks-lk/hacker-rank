@@ -2,102 +2,12 @@
 
 import fs from 'fs';
 
-
 export function countInversions(arr) {
     const n = arr.length;
     let inversions = 0;
-    let merged = Array(n);
-
-    let d = 1;
-    while (d < n) {
-        for (let i = 0; i < n-d; i += d*2) {
-            let lside = { left: i, right: i+d-1 };
-            let rside = { left: i+d, right: Math.min(i+(2*d)-1, n-1) };
-
-            // console.log(d, arr, lside, rside);
-            let { inversions: subtotal } = merge(arr, lside, rside, merged);
-            inversions += subtotal;
-        }
-
-        d *= 2;
-    }
-
-    return inversions;
-}
-
-
-function merge(arr, lrange, rrange, merged) {
-    let ln = lrange.right - lrange.left + 1;
-    let rn = rrange.right - rrange.left + 1;
-    let inversions = 0;
-
-    let lmin = arr[lrange.left];
-    let lmax = arr[lrange.right];
-    let rmin = arr[rrange.left];
-    let rmax = arr[rrange.right];
-
-    if (lmax <= rmin) {
-        // all OK! sorted 
-    }
-    else if (rmax <= lmin) {
-        // swap all right with all left
-        // copy left to merged
-        for (let i = lrange.left; i <= lrange.right; i++) {
-            merged[i] = arr[i];
-        }
-        // move right range to the left
-        let arri = lrange.left;
-        for (let i = rrange.left; i <= rrange.right; i++) {
-            arr[arri++] = arr[i];
-        }
-        // save left range on the right side
-        for (let i = lrange.left; i <= lrange.right; i++) {
-            arr[arri++] = merged[i];
-        }
-
-        inversions += ln * rn;
-    }
-    else {
-        // merge right with left
-        let li = lrange.right;
-        let ri = rrange.right;
-        let mi = ln + rn - 1;
-
-        while (ri >= rrange.left && li >= lrange.left) {
-            if (arr[li] > arr[ri]) {
-                inversions += ri - rrange.left + 1;
-                merged[mi--] = arr[li--];
-            }
-            else {
-                merged[mi--] = arr[ri--];
-            }
-        }
-
-        while (ri >= rrange.left) {
-            merged[mi--] = arr[ri--];
-        }
-        while (li >= lrange.left) {
-            merged[mi--] = arr[li--];
-        }
-
-        // update arr
-        for (let i = 0; i < ln + rn; i++) {
-            arr[lrange.left + i] = merged[i];
-        }
-    }
-
-    return { inversions, range: { left: lrange.left, right: rrange.right } };
-}
-
-
-export function countInversionsRanges(arr) {
-    const n = arr.length;
-    let inversions = 0;
-    let merged = Array(n);
-    let ranges = Array(n);
+    let ranges = [];
 
     let i = 0;
-    let ri = 0;
     while (i < n) {
         let lt = i;
         let rt = i;
@@ -107,30 +17,95 @@ export function countInversionsRanges(arr) {
             rt = i;
         }
 
-        ranges[ri++] = { left: lt, right: rt };
+        ranges.push({ left: lt, right: rt });
         i++;
     }
 
-    const rangesLength = ri;
-
-    console.log(arr.length, rangesLength);
+    // console.log(arr.length, rangesLength);
     // console.log(ranges);
 
-    for (let i = 0; i < rangesLength - 1; i++) {
+    while (ranges.length > 1) {
+        let mergedRanges = [];
+        let i = 0;
         // console.log(ranges);
         // console.log(arr);
-        let lside = ranges[i];
-        let rside = ranges[i+1];
 
-        let { inversions: subtotal, range: r } = merge(arr, lside, rside, merged);
-        inversions += subtotal;
-        ranges[i+1] = r;
+        while(i < ranges.length - 1) {
+            let lside = ranges[i++];
+            let rside = ranges[i++];
+    
+            let { inversions: subtotal, range: r } = merge(arr, lside, rside);
+            inversions += subtotal;
+            mergedRanges.push(r);
+        }
+
+        while (i < ranges.length) {
+            mergedRanges.push(ranges[i++]);
+        }
+
+        ranges = mergedRanges;
     }
 
     // console.log(ranges);
     return inversions;
 }
 
+export function countInversionsBisect(arr) {
+    const n = arr.length;
+    let inversions = 0;
+
+    let d = 1;
+    while (d < n) {
+        for (let i = 0; i < n-d; i += d*2) {
+            let lside = { left: i, right: i+d-1 };
+            let rside = { left: i+d, right: Math.min(i+(2*d)-1, n-1) };
+
+            // console.log(d, arr, lside, rside);
+            let { inversions: subtotal } = merge(arr, lside, rside);
+            inversions += subtotal;
+        }
+
+        d *= 2;
+    }
+
+    return inversions;
+}
+
+function merge(arr, lrange, rrange) {
+    let ln = lrange.right - lrange.left + 1;
+    let rn = rrange.right - rrange.left + 1;
+    let inversions = 0;
+
+    let li = lrange.right;
+    let ri = rrange.right;
+    let mi = ln + rn - 1;
+    let merged = Array(ln + rn);
+
+    while (ri >= rrange.left && li >= lrange.left) {
+        if (arr[li] > arr[ri]) {
+            inversions += ri - rrange.left + 1;
+            merged[mi--] = arr[li--];
+        }
+        else {
+            merged[mi--] = arr[ri--];
+        }
+    }
+
+    while (ri >= rrange.left) {
+        merged[mi--] = arr[ri--];
+    }
+
+    while (li >= lrange.left) {
+        merged[mi--] = arr[li--];
+    }
+
+    // update arr
+    for (let i = 0; i < ln + rn; i++) {
+        arr[lrange.left + i] = merged[i];
+    }
+
+    return { inversions, range: { left: lrange.left, right: rrange.right } };
+}
 
 export function countInversionsOnplusm(arr) {
     const n = arr.length;
