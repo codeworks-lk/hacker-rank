@@ -22,12 +22,14 @@ import { countInversions, countInversionsBrute, readCountingInversionsTestCase }
 import { makeAnagram } from './strings/making-anagrams.js';
 import { alternatingCharacters } from './strings/alternating-characters.js';
 import { isValid } from './strings/sherlock-valid-string.js';
+import { substrCount } from './strings/special-string-again.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = isValid('aaabc');
+result = substrCount(1, 'aabaaaaxaaaabaa');
+// result = isValid('aaabc');
 // result = alternatingCharacters('aaabbaabbb');
 // result = makeAnagram('a', 'ab');
 
