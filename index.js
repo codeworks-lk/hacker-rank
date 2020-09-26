@@ -27,19 +27,19 @@ console.log("hello hacker-rank");
 
 let result = 0;
 
-// result = isValid('aaabbbcccdd');
+result = isValid('aaabc');
 // result = alternatingCharacters('aaabbaabbb');
 // result = makeAnagram('a', 'ab');
 
 
-let tc = readCountingInversionsTestCase('sorting/counting-inversions-test-case-1.txt');
+// let tc = readCountingInversionsTestCase('sorting/counting-inversions-test-case-1.txt');
 
-for (let arr of tc) {
-    result = countInversionsBrute(arr);
-    console.log(result);
-    result = countInversions(arr);
-    console.log(result);
-}
+// for (let arr of tc) {
+//     result = countInversionsBrute(arr);
+//     console.log(result);
+//     result = countInversions(arr);
+//     console.log(result);
+// }
 
 // result = countInversionsBrute([1,5,1,8,2,3,5,9,8,3,5]);
 // result = countInversions([1,5,1,8,2,3,5,9,8,3,5]);
