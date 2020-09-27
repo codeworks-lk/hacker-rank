@@ -23,12 +23,32 @@ import { makeAnagram } from './strings/making-anagrams.js';
 import { alternatingCharacters } from './strings/alternating-characters.js';
 import { isValid } from './strings/sherlock-valid-string.js';
 import { substrCount } from './strings/special-string-again.js';
+import { commonChild } from './strings/common-child.js';
+import { minimumAbsoluteDifference } from './greedy/minimum-absolute-difference.js';
+import { luckBalance } from './greedy/luck-balance.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = substrCount(1, 'aabaaaaxaaaabaa');
+// result = luckBalance(3, [[5, 1], [2, 1], [1, 1], [8, 1], [10, 0], [5, 0]])
+// result = minimumAbsoluteDifference([3, -7, 0]);
+
+
+result = commonChild(
+'WEWOUCUIDGCGTRMEZEPXZFEJWISRSBBSYXAYDFEJJDLEBVHHKS',
+'FDAGCXGKCTKWNECHMRXZWMLRYUCOCZHJRRJBOAJOQJZZVUYXIC'
+);
+// result = commonChild('xxxxka',
+//                      'xkxxsa');
+
+// result = commonChild('xxxyyya',
+//                      'aaaaxxx');
+// result = commonChild('harry',
+//                      'sally');
+// result = commonChild('xxxadaxxx',
+//                      'axxxdxxxa');
+// result = substrCount(1, 'aabaaaaxaaaabaa');
 // result = isValid('aaabc');
 // result = alternatingCharacters('aaabbaabbb');
 // result = makeAnagram('a', 'ab');
