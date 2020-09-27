@@ -27,12 +27,15 @@ import { commonChild } from './strings/common-child.js';
 import { minimumAbsoluteDifference } from './greedy/minimum-absolute-difference.js';
 import { luckBalance } from './greedy/luck-balance.js';
 import { getMinimumCost } from './greedy/greedy-florist.js';
+import { maxMin } from './greedy/max-min.js';
 
 console.log("hello hacker-rank");
 
 let result = 0;
 
-result = getMinimumCost(3, [1, 2, 3, 1, 2, 3]);
+result = maxMin(2, [1, 100, 102])
+
+// result = getMinimumCost(3, [1, 2, 3, 1, 2, 3]);
 
 // result = luckBalance(3, [[5, 1], [2, 1], [1, 1], [8, 1], [10, 0], [5, 0]])
 // result = minimumAbsoluteDifference([3, -7, 0]);
